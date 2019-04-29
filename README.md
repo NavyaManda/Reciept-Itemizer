@@ -1,6 +1,6 @@
 # Receipt- Itemizer Application
 
-The main aim of this application is to consume recipta and show a weekly report.
+The main aim of this application is to consume receipt a and show a weekly report.
 
 ## Instructions to run the application locally.
 1. Install Nodejs, https://nodejs.org/en/
