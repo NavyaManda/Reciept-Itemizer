@@ -30,9 +30,9 @@ var storage = multer.diskStorage({
       cb(null, Date.now() + '-' +file.originalname )
     }
 })
-
+  
 var upload = multer({ storage: storage });
-
+  
 app.get('/',function(req,res){
     return res.send('Hello Server');
 })
@@ -82,12 +82,12 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.post('/reports', function(req, res) {
     var startDate = new Date(req.body.startDate);
     var endDate = new Date(req.body.endDate);
-
+    
     Product.aggregate([
-        { $match: {
-            "date": {
+        { $match: { 
+            "date": { 
                 $lt: startDate,
-                $gte: endDate
+                $gte: endDate 
             }
         }},
         { $group: {
@@ -100,9 +100,9 @@ app.post('/reports', function(req, res) {
             }
         }}
     ], function(err, docs) {
-        if (!err){
+        if (!err){ 
             res.json({success : "Updated Successfully", status : 200, data: docs});
-        } else {
+        } else { 
             throw err;
         }
     })

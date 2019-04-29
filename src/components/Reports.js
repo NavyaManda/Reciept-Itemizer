@@ -42,7 +42,9 @@ class Reports extends Component {
 
     render()
     {
+        let totalCost = 0;
         let tableRows = this.state.reportsList.map((item,index) =>{
+            totalCost = totalCost + item.totalPrice;
             return <tr key={index}>
                 <th scope="row">{index + 1}</th>
                 <td>{item._id}</td>
@@ -82,6 +84,10 @@ class Reports extends Component {
                             </thead>
                             <tbody>
                                 {tableRows}
+                                <tr key={totalCost}>
+                                    <th colspan="3" style={{textAlign:'right'}}>Total Cost</th>
+                                    <th>{totalCost.toFixed(2)}</th>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

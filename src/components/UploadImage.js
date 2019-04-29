@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class UploadImage extends Component {
-
+  
     constructor(props) {
         super(props);
         this.state = {
@@ -25,11 +25,11 @@ class UploadImage extends Component {
         for (var x = 0; x < files.length; x++) {
             // compare file type find doesn't matach
             if (types.every(type => files[x].type !== type)) {
-                // create error message and assign to container
+                // create error message and assign to container   
                 err[x] = files[x].type + ' is not a supported format\n';
             }
         };
-        for (var z = 0; z < err.length; z++) { // if message not same old that mean has error
+        for (var z = 0; z < err.length; z++) { // if message not same old that mean has error 
             // discard selected file
             toast.error(err[z])
             event.target.value = null
@@ -55,7 +55,7 @@ class UploadImage extends Component {
                 err[x] = files[x].type + 'is too large, please pick a smaller file\n';
             }
         };
-        for (var z = 0; z < err.length; z++) { // if message not same old that mean has error
+        for (var z = 0; z < err.length; z++) { // if message not same old that mean has error 
             // discard selected file
             toast.error(err[z])
             event.target.value = null
@@ -100,7 +100,7 @@ class UploadImage extends Component {
             }
     }
 
-  render()
+  render() 
   {
     return (
         <div className="row">
@@ -108,7 +108,7 @@ class UploadImage extends Component {
                 <div className="form-group files">
                     <label>Upload Your File </label>
                     <input type="file" className="form-control" multiple onChange={this.onChangeHandler}/>
-                </div>
+                </div>  
                 { this.state.message !==null ?
                     <div className="error-message">{this.state.message}</div>
                     :
@@ -117,7 +117,7 @@ class UploadImage extends Component {
                 <div className="form-group">
                     <ToastContainer />
                     <Progress max="100" color="success" value={this.state.loaded} >{Math.round(this.state.loaded,2) }%</Progress>
-                </div>
+                </div> 
                 <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
             </div>
         </div>
