@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 class Navigation extends Component {
 
-    render()
+    render() 
     {
         return (
             <nav className="navbar navbar-default">
